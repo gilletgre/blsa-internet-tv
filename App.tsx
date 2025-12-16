@@ -65,7 +65,18 @@ NOTES:   ${data.notes || 'N/A'}`;
   // Encode data for Netlify
   const encode = (data: any) => {
     return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .filter(key => {
+        // Handle boolean fields (checkboxes) like native forms: omit if false
+        if (typeof data[key] === 'boolean') {
+          return data[key] === true;
+        }
+        return true;
+      })
+      .map(key => {
+        // Convert boolean true to 'on' for better readability in Netlify UI
+        const value = typeof data[key] === 'boolean' ? 'on' : data[key];
+        return encodeURIComponent(key) + "=" + encodeURIComponent(value);
+      })
       .join("&");
   };
 
