@@ -115,7 +115,7 @@ NOTES:   ${data.notes || 'N/A'}`;
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <OptionCard 
                 title="Pack Flex+"
-                description="Internet Ultra-Rapide + Télévision Premium. L'offre complète."
+                description="Internet + Télévision."
                 icon={<Tv size={32} />}
                 selected={data.pack.includes("Flex+")}
                 onClick={() => updateField('pack', "Pack Flex+ (Internet + TV)")}
