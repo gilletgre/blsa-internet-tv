@@ -47,53 +47,20 @@
         }
       }
     </script>
-    <style>
-      body {
-        background-color: #f8fafc;
-        /* Light minimalist gradient */
-        background-image: 
-          radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0, transparent 50%), 
-          radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.05) 0, transparent 50%);
-        background-attachment: fixed;
-        color: #1e293b;
-      }
-      .glass-card {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(226, 232, 240, 0.8);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #94a3b8;
-      }
-    </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-        "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-      }
-    }
-    </script>
-  </head>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+</head>
   <body>
     <!-- Hidden Netlify Form for Detection -->
-    <!-- Added 'bot-field' input which is required for the netlify-honeypot attribute to work -->
     <form name="flex-order" netlify netlify-honeypot="bot-field" hidden>
       <input name="bot-field" />
       <input type="text" name="pack" />
@@ -116,6 +83,7 @@
       <textarea name="notes"></textarea>
     </form>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- Script pointing to root for Vite compatibility -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

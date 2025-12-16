@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { OrderForm, INITIAL_DATA, STEPS } from './types';
-import { QuoteModal } from './components/QuoteModal';
-import { refineText } from './services/geminiService';
-import { OptionCard, Toggle, VisualInput } from './components/VisualInputs';
+import { OrderForm, INITIAL_DATA, STEPS } from './types.ts';
+import { QuoteModal } from './components/QuoteModal.tsx';
+import { refineText } from './services/geminiService.ts';
+import { OptionCard, Toggle, VisualInput } from './components/VisualInputs.tsx';
 import { 
   ChevronRight, 
   ChevronLeft, 
